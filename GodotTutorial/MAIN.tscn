@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://c20vt3ep83co1"]
+
+[ext_resource type="PackedScene" uid="uid://djinj8yexr7aa" path="res://rock.tscn" id="1_q8t8r"]
+[ext_resource type="PackedScene" uid="uid://ckjdxjk8r83j2" path="res://spire.tscn" id="1_w4i8u"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_0q4mr"]
+sky_top_color = Color(0.686275, 0.341176, 0, 1)
+sky_horizon_color = Color(0.717647, 0.616667, 0.5, 1)
+ground_bottom_color = Color(0.184314, 0.12549, 0, 1)
+ground_horizon_color = Color(0.717647, 0.616667, 0.5, 1)
+
+[sub_resource type="Sky" id="Sky_sc23a"]
+sky_material = SubResource("ProceduralSkyMaterial_0q4mr")
+
+[sub_resource type="Environment" id="Environment_bo0g0"]
+background_mode = 2
+sky = SubResource("Sky_sc23a")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_548gy"]
+albedo_color = Color(1, 1, 0.701961, 1)
+
+[node name="Forest" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+light_color = Color(1, 0, 0, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bo0g0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.903133, 0, 0.429361, 0, 1, 0, -0.429361, 0, 0.903133, 1.33223, 0.788169, 2.36335)
+
+[node name="Ground" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+size = Vector3(100, 1, 100)
+material = SubResource("StandardMaterial3D_548gy")
+
+[node name="rocks" type="Node3D" parent="."]
+
+[node name="CSGBox3D" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -16.5248, 1.5874, 9.86851)
+size = Vector3(1, 15, 1)
+
+[node name="CSGBox3D2" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -20.757, 0.127381, 6.40624)
+
+[node name="CSGBox3D3" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -7.00282, 0.655885, 11.8048)
+size = Vector3(1, 13, 1)
+
+[node name="CSGBox3D4" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -14.6103, -0.136586, 17.3909)
+
+[node name="CSGBox3D5" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -9.33153, 0.0122175, 8.42956)
+
+[node name="CSGBox3D6" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -8.86864, -0.117054, 28.0246)
+
+[node name="CSGBox3D7" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -13.7246, 0.505966, 18.3907)
+
+[node name="CSGBox3D8" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -20.8895, 0.641065, 9.11169)
+
+[node name="CSGBox3D9" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -26.5226, -0.439729, 8.72843)
+
+[node name="CSGBox3D10" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -12.7685, 0.0887752, 14.127)
+size = Vector3(1, 13, 1)
+
+[node name="CSGBox3D11" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -20.376, -0.703696, 19.7131)
+
+[node name="CSGBox3D12" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -13.6198, -0.554893, 1.65393)
+
+[node name="CSGBox3D13" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -14.6343, -0.684165, 30.3468)
+
+[node name="CSGBox3D14" parent="rocks" instance=ExtResource("1_q8t8r")]
+transform = Transform3D(-0.679957, 0.731288, -0.0536269, -0.623753, -0.615315, -0.481996, -0.385475, -0.294286, 0.87453, -6.38076, 0.505966, 18.3907)
+
+[node name="spires" type="Node3D" parent="."]
+
+[node name="Spire" parent="spires" instance=ExtResource("1_w4i8u")]
+
+[node name="Spire2" parent="spires" instance=ExtResource("1_w4i8u")]
+transform = Transform3D(0.999999, -0.00122176, 0.000315349, 0.00122182, 0.999999, -0.0001763, -0.000315127, 0.000176696, 1, -5, 2.08165e-12, 4)
+
+[node name="Spire3" parent="spires" instance=ExtResource("1_w4i8u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2.08165e-12, 8)

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ckjdxjk8r83j2"]
+
+[node name="Spire" type="Node3D"]
+
+[node name="Point" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.5544, 0)
+sides = 22
+cone = true
+
+[node name="Column" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.04391, 0)
+size = Vector3(1, 11, 1)
